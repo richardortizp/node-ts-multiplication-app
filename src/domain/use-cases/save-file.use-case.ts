@@ -17,7 +17,7 @@ export class SaveFile implements SaveFileUseCase {
     fileContent,
     fileDestination = "outputs",
     fileName = "table",
-    fileExtension = ".txt",
+    fileExtension = "txt",
   }: Options): boolean {
     try {
       fs.mkdirSync(fileDestination, { recursive: true });

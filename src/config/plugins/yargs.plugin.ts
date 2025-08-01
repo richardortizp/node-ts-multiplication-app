@@ -2,6 +2,9 @@ import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 
 export const yarg = yargs(hideBin(process.argv))
+  // .options({
+
+  // })
   .option("b", {
     alias: "base",
     type: "number",
@@ -39,8 +42,8 @@ export const yarg = yargs(hideBin(process.argv))
     describe: "Extension file",
   })
   .check((argv, options) => {
-    if (argv.b < 1) throw "Error: base must be greater than 0";
-    if (argv.l < 1) throw "Error limit must be greater than 0";
+    if (argv.b < 1) throw new Error("Error: base must be greater than 0");
+    if (argv.l < 1) throw new Error("Error limit must be greater than 0");
     return true;
   })
   .parseAsync();
